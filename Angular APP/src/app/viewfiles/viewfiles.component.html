@@ -1,0 +1,32 @@
+﻿<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+  <div class="card-body">
+    <div class="container-fluid">
+      <h2>View All Files</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+        <th>File Name</th>
+        <th>Description</th>
+        <th>File Type</th>
+        <th>File Extension</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let file of files">
+          <td>{{file.fileName}}</td>
+          <td>{{file.description}}</td>
+          <td>{{file.contentType}}</td>
+          <td>{{file.fileFormat}}</td>
+          <td>
+            <input type="button" class="btn btn-success" (click)="downloadFile(file.id, file.contentType)" value="Download"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
